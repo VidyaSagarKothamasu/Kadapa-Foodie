@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kadapa-Foodie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">🍽️ Kadapa-Foodie</div>
+
+      <input
+        type="text"
+        id="search"
+        placeholder="Search for restaurants..."
+        onkeyup="searchRestaurant()"
+      />
+
+      <div class="cart-btn" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="hero">
+      <h1>Discover the Best Food in Kadapa</h1>
+      <p>Fast delivery • Great taste • Affordable prices</p>
+    </section>
+
+    <!-- Restaurant Section -->
+    <main>
+      <section id="restaurants" class="restaurant-grid"></section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <h3>Total: ₹<span id="total">0</span></h3>
+      <button onclick="checkout()">Place Order</button>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

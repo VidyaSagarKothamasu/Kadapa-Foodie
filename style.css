@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff5200;
+  letter-spacing: 1px;
+}
+
+#search {
+  width: 40%;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.3s;
+}
+
+#search:focus {
+  border-color: #ff5200;
+  box-shadow: 0 0 8px rgba(255, 82, 0, 0.3);
+}
+
+.cart-btn {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.cart-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(to right, #ff5200, #ff7a18);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* ================= RESTAURANT GRID ================= */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px;
+}
+
+/* ================= CARD ================= */
+.restaurant-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Section */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.restaurant-card:hover .image-wrapper img {
+  transform: scale(1.08);
+}
+
+/* Gradient Overlay */
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* Restaurant Name */
+.restaurant-name {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Info Section */
+.restaurant-info {
+  padding: 18px;
+}
+
+.restaurant-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.rating {
+  display: inline-block;
+  background: #e6f4ea;
+  color: #2e7d32;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ================= MENU ================= */
+.menu-card {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 10px;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.menu-card:hover {
+  background: #f0f0f0;
+}
+
+.menu-card img {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-card h4 {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(to right, #ff5200, #ff7a18);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 82, 0, 0.4);
+}
+
+/* ================= CART ================= */
+.cart-sidebar {
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background: white;
+  padding: 25px;
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.cart-sidebar.active {
+  right: 0;
+}
+
+.cart-sidebar h2 {
+  margin-bottom: 20px;
+}
+
+#cart-items {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+#cart-items li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Scrollbar Styling */
+.cart-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-sidebar::-webkit-scrollbar-thumb {
+  background: #ff5200;
+  border-radius: 10px;
+}
