@@ -1,0 +1,21 @@
+name: Dropdown Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        required: true
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show selected option
+        run: echo "You selected ${{ github.event.inputs.environment }}"
