@@ -8,9 +8,9 @@ on:
         required: true
         type: choice
         options:
-          - dev
-          - staging
-          - production
+          - Tharak Bhai
+          - Nithin Bhai
+          - Prem Bhai
 
 jobs:
   run-job:
